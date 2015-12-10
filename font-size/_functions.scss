@@ -1,0 +1,26 @@
+@function get-font-size($name) {
+    $font-size: map-get($font-size__list, $name);
+    @return #{$font-size};
+}
+
+@function th-font-size--check-special($key) {
+    @each $name, $value in $font-size__special-case {
+        @if $name == $key {
+            @return true;
+        }
+    }
+
+    @return false;
+}
+
+@function th-font-size--value-generator($name) {
+    @if th-font-size--check-special($name) {
+        @return $name;
+    }
+
+    @return get-font-size($name);
+}
+
+@function th-font-size--selector-generator($prefix, $name) {
+    @return #{$prefix}#{$font-size__selector-prefix}#{$name};
+}

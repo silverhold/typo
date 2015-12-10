@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$font-size__special-case: (
+    inherit: $font-size__include--inherit
+);
+
+
+@if $font-size {
+    @each $name, $family in $font-size__list {
+        @include font-size--statement-generator($name);
+    }
+
+    @each $name, $bool in $font-size__special-case {
+        @if $bool {
+            @include font-size--statement-generator($name);
+        }
+    }
+}

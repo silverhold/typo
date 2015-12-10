@@ -1,0 +1,14 @@
+$font-size__special-case: (
+    'inherit': inherit
+);
+
+@mixin font-size--statement-generator($name) {
+    #{th-font-size--selector-generator('.', $name)},
+    #{th-font-size--selector-generator('%', $name)} {
+        font-size: th-font-size--value-generator($name) !important;
+    }
+}
+
+@mixin font-size--extend($name) {
+    @extend #{th-font-size--selector-generator('%', $name)};
+}

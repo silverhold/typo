@@ -1,0 +1,10 @@
+$font-size: true !default;
+
+$font-size__list: (
+    'small': 14px,
+    'normal': 16px,
+    'large': 18px,
+) !default;
+
+$font-size__include--inherit: true !default;
+$font-size__selector-prefix: 'font-size--' !default;
