@@ -1,0 +1,14 @@
+$text-decoration__special-case: (
+    inherit: $text-decoration__include--inherit
+);
+
+@mixin text-decoration--statement-generator($name) {
+    #{th-text-decoration--selector-generator('.', $name)},
+    #{th-text-decoration--selector-generator('%', $name)} {
+        text-decoration: $name !important;
+    }
+}
+
+@mixin text-decoration--extend($name) {
+    @extend #{th-text-decoration--selector-generator('%', $name)};
+}

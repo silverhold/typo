@@ -1,0 +1,6 @@
+$text-decoration: true !default;
+
+$text-decoration__list: (none, underline, overline, line-through) !default;
+
+$text-decoration__include--inherit: true !default;
+$text-decoration__selector-prefix: 'text-decoration--' !default;

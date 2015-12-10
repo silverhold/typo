@@ -68,9 +68,9 @@ If you want to extend a selector to one of the helper class generated you can us
 ```
 
 ### font-variant
-Font variant classes are generated with the variable list `$font-variant__list` that will generate class with all the values possible for the rule `font-variant` (normal, italic, oblique). You can edit the list to avoid one or several helper class. Default value of the `$font-variant__list` variable.
+Font variant classes are generated with the variable list `$font-variant__list` that will generate class with all the values possible for the rule `font-variant` (normal, small-caps). You can edit the list to avoid one or several helper class. Default value of the `$font-variant__list` variable.
 ```
-$font-variant__list: (normal, italic, oblique) !default;
+$font-variant__list: (normal, small-caps) !default;
 ```
 
 You can also generate class for the inherit value by setting to `true` the `$font-variant__include--inherit` variable.
@@ -138,3 +138,19 @@ If you want to extend a selector to one of the helper class generated you can us
 ```
 
 You can avoid typo-helper to generate any helper font-size helper class by switching to false the `$font-size` variable.
+
+### text-decoration
+Font style classes are generated with the variable list `$text-decoration__list` that will generate class with all the values possible for the rule `text-decoration` (normal, italic, oblique). You can edit the list to avoid one or several helper class. Default value of the `$text-decoration__list` variable.
+```
+$text-decoration__list: (none, underline, overline, line-through) !default;
+```
+
+You can also generate class for the inherit value by setting to `true` the `$text-decoration__include--inherit` variable.
+If you don't want to generate any helper class for text-decoration property you can set the `$text-decoration` variable to `false`.
+
+If you want to extend a selector to one of the helper class generated you can use the mixin `text-decoration--extend($name)`, as shown below.
+```
+.selector {
+    @include text-decoration--extend(italic);
+}
+```

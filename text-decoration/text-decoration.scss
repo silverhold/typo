@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$text-decoration__special-case: (
+    inherit: $text-decoration__include--inherit
+);
+
+@if $text-decoration {
+    @each $style in $text-decoration__list {
+        @include text-decoration--statement-generator($style);
+    }
+
+    @each $style, $bool in $text-decoration__special-case {
+        @if $bool {
+            @include text-decoration--statement-generator($style);
+        }
+    }
+}
