@@ -1,0 +1,14 @@
+$font-weight__special-case: (
+    'inherit': inherit
+);
+
+@mixin font-weight--statement-generator($name) {
+    #{th-font-weight--selector-generator('.', $name)},
+    #{th-font-weight--selector-generator('%', $name)} {
+        font-weight: th-font-weight--value-generator($name) !important;
+    }
+}
+
+@mixin font-weight--extend($name) {
+    @extend #{th-font-weight--selector-generator('%', $name)};
+}

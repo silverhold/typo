@@ -1,0 +1,26 @@
+@function get-font-weight($name) {
+    $font-weight: map-get($font-weight__list, $name);
+    @return #{$font-weight};
+}
+
+@function th-font-weight--check-special($key) {
+    @each $name, $value in $font-weight__special-case {
+        @if $name == $key {
+            @return true;
+        }
+    }
+
+    @return false;
+}
+
+@function th-font-weight--value-generator($name) {
+    @if th-font-weight--check-special($name) {
+        @return $name;
+    }
+
+    @return get-font-weight($name);
+}
+
+@function th-font-weight--selector-generator($prefix, $name) {
+    @return #{$prefix}#{$font-weight__selector-prefix}#{$name};
+}

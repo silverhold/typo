@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$font-weight__special-case: (
+    inherit: $font-weight__include--inherit,
+    lighter: $font-weight__include--lighter,
+    bolder: $font-weight__include--bolder,
+);
+
+
+@if $font-weight {
+    @each $name, $family in $font-weight__list {
+        @include font-weight--statement-generator($name);
+    }
+
+    @each $name, $bool in $font-weight__special-case {
+        @if $bool {
+            @include font-weight--statement-generator($name);
+        }
+    }
+}

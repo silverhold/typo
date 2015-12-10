@@ -1,0 +1,12 @@
+$font-weight: true !default;
+
+$font-weight__list: (
+    'light': 100,
+    'normal': 400,
+    'bold': 600,
+) !default;
+
+$font-weight__include--inherit: true !default;
+$font-weight__include--lighter: true !default;
+$font-weight__include--bolder: true !default;
+$font-weight__selector-prefix: 'font-weight--' !default;
