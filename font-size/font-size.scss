@@ -6,6 +6,11 @@ $font-size__special-case: (
     inherit: $font-size__include--inherit
 );
 
+$font-size__pseudo-class: (
+    ('&:hover', $font-size__pseudo-class--hover, $font-size__pseudo-class--hover-prefix),
+    ('&:active', $font-size__pseudo-class--active, $font-size__pseudo-class--active-prefix),
+    ('&:focus', $font-size__pseudo-class--focus, $font-size__pseudo-class--focus-prefix),
+);
 
 @if $font-size {
     @each $name, $family in $font-size__list {

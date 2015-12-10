@@ -6,6 +6,12 @@ $font-variant__special-case: (
     inherit: $font-variant__include--inherit
 );
 
+$font-variant__pseudo-class: (
+    ('&:hover', $font-variant__pseudo-class--hover, $font-variant__pseudo-class--hover-prefix),
+    ('&:active', $font-variant__pseudo-class--active, $font-variant__pseudo-class--active-prefix),
+    ('&:focus', $font-variant__pseudo-class--focus, $font-variant__pseudo-class--focus-prefix),
+);
+
 @if $font-variant {
     @each $style in $font-variant__list {
         @include font-variant--statement-generator($style);

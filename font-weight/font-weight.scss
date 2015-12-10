@@ -8,6 +8,12 @@ $font-weight__special-case: (
     bolder: $font-weight__include--bolder,
 );
 
+$font-weight__pseudo-class: (
+    ('&:hover', $font-weight__pseudo-class--hover, $font-weight__pseudo-class--hover-prefix),
+    ('&:active', $font-weight__pseudo-class--active, $font-weight__pseudo-class--active-prefix),
+    ('&:focus', $font-weight__pseudo-class--focus, $font-weight__pseudo-class--focus-prefix),
+);
+
 
 @if $font-weight {
     @each $name, $family in $font-weight__list {

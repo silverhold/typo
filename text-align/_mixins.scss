@@ -3,12 +3,21 @@ $text-align__special-case: (
 );
 
 @mixin text-align--statement-generator($name) {
-    #{th-text-align--selector-generator('.', $name)},
-    #{th-text-align--selector-generator('%', $name)} {
+    #{th-text-align--selector-generator($name)} {
         text-align: $name !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $text-align__pseudo-class {
+        @if $bool {
+            #{th-text-align--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    text-align: $name !important;
+                }
+            }
+        }
     }
 }
 
 @mixin text-align--extend($name) {
-    @extend #{th-text-align--selector-generator('%', $name)};
+    @extend #{th-text-align--selector-line-generator('%', $name)};
 }

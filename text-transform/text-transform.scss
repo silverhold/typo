@@ -6,6 +6,12 @@ $text-transform__special-case: (
     inherit: $text-transform__include--inherit
 );
 
+$text-transform__pseudo-class: (
+    ('&:hover', $text-transform__pseudo-class--hover, $text-transform__pseudo-class--hover-prefix),
+    ('&:active', $text-transform__pseudo-class--active, $text-transform__pseudo-class--active-prefix),
+    ('&:focus', $text-transform__pseudo-class--focus, $text-transform__pseudo-class--focus-prefix),
+);
+
 @if $text-transform {
     @each $style in $text-transform__list {
         @include text-transform--statement-generator($style);

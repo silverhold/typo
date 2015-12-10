@@ -3,12 +3,21 @@ $text-decoration__special-case: (
 );
 
 @mixin text-decoration--statement-generator($name) {
-    #{th-text-decoration--selector-generator('.', $name)},
-    #{th-text-decoration--selector-generator('%', $name)} {
+    #{th-text-decoration--selector-generator($name)} {
         text-decoration: $name !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $text-decoration__pseudo-class {
+        @if $bool {
+            #{th-text-decoration--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    text-decoration: $name !important;
+                }
+            }
+        }
     }
 }
 
 @mixin text-decoration--extend($name) {
-    @extend #{th-text-decoration--selector-generator('%', $name)};
+    @extend #{th-text-decoration--selector-line-generator('%', $name)};
 }

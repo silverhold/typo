@@ -10,3 +10,11 @@ $font-weight__include--inherit: true !default;
 $font-weight__include--lighter: true !default;
 $font-weight__include--bolder: true !default;
 $font-weight__selector-prefix: 'font-weight--' !default;
+
+
+$font-weight__pseudo-class--hover: false !default;
+$font-weight__pseudo-class--hover-prefix: '--hover' !default;
+$font-weight__pseudo-class--active: false !default;
+$font-weight__pseudo-class--active-prefix: '--active' !default;
+$font-weight__pseudo-class--focus: false !default;
+$font-weight__pseudo-class--focus-prefix: '--focus' !default;

@@ -21,6 +21,16 @@
     @return get-font-weight($name);
 }
 
-@function th-font-weight--selector-generator($prefix, $name) {
-    @return #{$prefix}#{$font-weight__selector-prefix}#{$name};
+@function th-font-weight--selector-line-generator($prefix, $name, $suffix: false) {
+    $selector: #{$prefix}#{$font-weight__selector-prefix}#{$name};
+
+    @if $suffix {
+        $selector: $selector + $suffix;
+    }
+
+    @return $selector;
+}
+
+@function th-font-weight--selector-generator($name, $suffix: false) {
+    @return #{th-font-weight--selector-line-generator('.', $name, $suffix)}, #{th-font-weight--selector-line-generator('%', $name, $suffix)};
 }

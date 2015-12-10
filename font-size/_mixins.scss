@@ -3,12 +3,22 @@ $font-size__special-case: (
 );
 
 @mixin font-size--statement-generator($name) {
-    #{th-font-size--selector-generator('.', $name)},
-    #{th-font-size--selector-generator('%', $name)} {
+    #{th-font-size--selector-generator($name)} {
         font-size: th-font-size--value-generator($name) !important;
     }
+
+    @each $pseudo-class, $bool, $suffix in $font-size__pseudo-class {
+        @if $bool {
+            #{th-font-size--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    font-size: th-font-size--value-generator($name) !important;
+                }
+            }
+        }
+    }
+
 }
 
 @mixin font-size--extend($name) {
-    @extend #{th-font-size--selector-generator('%', $name)};
+    @extend #{th-font-size--selector-line-generator('%', $name)};
 }

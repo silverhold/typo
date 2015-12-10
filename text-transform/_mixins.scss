@@ -3,12 +3,21 @@ $text-transform__special-case: (
 );
 
 @mixin text-transform--statement-generator($name) {
-    #{th-text-transform--selector-generator('.', $name)},
-    #{th-text-transform--selector-generator('%', $name)} {
+    #{th-text-transform--selector-generator($name)} {
         text-transform: $name !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $text-transform__pseudo-class {
+        @if $bool {
+            #{th-text-transform--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    text-transform: $name !important;
+                }
+            }
+        }
     }
 }
 
 @mixin text-transform--extend($name) {
-    @extend #{th-text-transform--selector-generator('%', $name)};
+    @extend #{th-text-transform--selector-line-generator('%', $name)};
 }

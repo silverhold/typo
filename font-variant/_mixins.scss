@@ -3,12 +3,21 @@ $font-variant__special-case: (
 );
 
 @mixin font-variant--statement-generator($name) {
-    #{th-font-variant--selector-generator('.', $name)},
-    #{th-font-variant--selector-generator('%', $name)} {
+    #{th-font-variant--selector-generator($name)} {
         font-variant: $name !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $font-variant__pseudo-class {
+        @if $bool {
+            #{th-font-variant--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    font-variant: $name !important;
+                }
+            }
+        }
     }
 }
 
 @mixin font-variant--extend($name) {
-    @extend #{th-font-variant--selector-generator('%', $name)};
+    @extend #{th-font-variant--selector-line-generator('%', $name)};
 }

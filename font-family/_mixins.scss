@@ -2,13 +2,22 @@ $font-family__special-case: (
     'inherit': inherit
 );
 
-@mixin font-family--statement-generator($name) {
-    #{th-font-family--selector-generator('.', $name)},
-    #{th-font-family--selector-generator('%', $name)} {
+@mixin font-family--statement-generator($name, $pseudo-class: false) {
+    #{th-font-family--selector-generator($name)} {
         font-family: th-font-family--value-generator($name) !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $font-family__pseudo-class {
+        @if $bool {
+            #{th-font-family--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    font-family: th-font-family--value-generator($name) !important;
+                }
+            }
+        }
     }
 }
 
 @mixin font-family--extend($name) {
-    @extend #{th-font-family--selector-generator('%', $name)};
+    @extend #{th-font-family--selector-line-generator('%', $name)};
 }

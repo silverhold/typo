@@ -3,12 +3,21 @@ $font-weight__special-case: (
 );
 
 @mixin font-weight--statement-generator($name) {
-    #{th-font-weight--selector-generator('.', $name)},
-    #{th-font-weight--selector-generator('%', $name)} {
+    #{th-font-weight--selector-generator($name)} {
         font-weight: th-font-weight--value-generator($name) !important;
+    }
+
+    @each $pseudo-class, $bool, $suffix in $font-weight__pseudo-class {
+        @if $bool {
+            #{th-font-weight--selector-generator($name, $suffix)} {
+                #{$pseudo-class} {
+                    font-weight: th-font-weight--value-generator($name) !important;
+                }
+            }
+        }
     }
 }
 
 @mixin font-weight--extend($name) {
-    @extend #{th-font-weight--selector-generator('%', $name)};
+    @extend #{th-font-weight--selector-line-generator('%', $name)};
 }

@@ -1,3 +1,17 @@
-@function th-text-align--selector-generator($prefix, $name) {
+@function th-text-align--selector-line-generator($prefix, $name) {
     @return #{$prefix}#{$text-align__selector-prefix}#{$name};
+}
+
+@function th-text-align--selector-line-generator($prefix, $name, $suffix: false) {
+    $selector: #{$prefix}#{$text-align__selector-prefix}#{$name};
+
+    @if $suffix {
+        $selector: $selector + $suffix;
+    }
+
+    @return $selector;
+}
+
+@function th-text-align--selector-generator($name, $suffix: false) {
+    @return #{th-text-align--selector-line-generator('.', $name, $suffix)}, #{th-text-align--selector-line-generator('%', $name, $suffix)};
 }

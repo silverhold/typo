@@ -6,6 +6,13 @@ $font-family__special-case: (
     inherit: $font-family__include--inherit
 );
 
+$font-family__pseudo-class: (
+    ('&:hover', $font-family__pseudo-class--hover, $font-family__pseudo-class--hover-prefix),
+    ('&:active', $font-family__pseudo-class--active, $font-family__pseudo-class--active-prefix),
+    ('&:focus', $font-family__pseudo-class--focus, $font-family__pseudo-class--focus-prefix),
+);
+
+
 
 @if $font-family {
     @each $name, $family in $font-family__list {

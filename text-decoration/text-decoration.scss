@@ -6,6 +6,12 @@ $text-decoration__special-case: (
     inherit: $text-decoration__include--inherit
 );
 
+$text-decoration__pseudo-class: (
+    ('&:hover', $text-decoration__pseudo-class--hover, $text-decoration__pseudo-class--hover-prefix),
+    ('&:active', $text-decoration__pseudo-class--active, $text-decoration__pseudo-class--active-prefix),
+    ('&:focus', $text-decoration__pseudo-class--focus, $text-decoration__pseudo-class--focus-prefix),
+);
+
 @if $text-decoration {
     @each $style in $text-decoration__list {
         @include text-decoration--statement-generator($style);
