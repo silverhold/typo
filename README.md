@@ -170,3 +170,19 @@ If you want to extend a selector to one of the helper class generated you can us
     @include text-transform--extend(uppercase);
 }
 ```
+
+### text-align
+Font style classes are generated with the variable list `$text-align__list` that will generate class with all the values possible for the rule `text-align` (left, right, center, justify). You can edit the list to avoid one or several helper class. Default value of the `$text-align__list` variable.
+```
+$text-align__list: (left, right, center, justify) !default;
+```
+
+You can also generate class for the inherit value by setting to `true` the `$text-align__include--inherit` variable.
+If you don't want to generate any helper class for text-align property you can set the `$text-align` variable to `false`.
+
+If you want to extend a selector to one of the helper class generated you can use the mixin `text-align--extend($name)`, as shown below.
+```
+.selector {
+    @include text-align--extend(left);
+}
+```

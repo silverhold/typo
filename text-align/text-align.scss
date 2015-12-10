@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$text-align__special-case: (
+    inherit: $text-align__include--inherit
+);
+
+@if $text-align {
+    @each $style in $text-align__list {
+        @include text-align--statement-generator($style);
+    }
+
+    @each $style, $bool in $text-align__special-case {
+        @if $bool {
+            @include text-align--statement-generator($style);
+        }
+    }
+}

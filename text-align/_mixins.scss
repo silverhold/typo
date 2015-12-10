@@ -1,0 +1,14 @@
+$text-align__special-case: (
+    inherit: $text-align__include--inherit
+);
+
+@mixin text-align--statement-generator($name) {
+    #{th-text-align--selector-generator('.', $name)},
+    #{th-text-align--selector-generator('%', $name)} {
+        text-align: $name !important;
+    }
+}
+
+@mixin text-align--extend($name) {
+    @extend #{th-text-align--selector-generator('%', $name)};
+}
