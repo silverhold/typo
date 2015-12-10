@@ -1,0 +1,3 @@
+@function th-font-style--selector-generator($prefix, $name) {
+    @return #{$prefix}#{$font-style__selector-prefix}#{$name};
+}
