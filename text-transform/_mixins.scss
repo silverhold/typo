@@ -1,0 +1,14 @@
+$text-transform__special-case: (
+    inherit: $text-transform__include--inherit
+);
+
+@mixin text-transform--statement-generator($name) {
+    #{th-text-transform--selector-generator('.', $name)},
+    #{th-text-transform--selector-generator('%', $name)} {
+        text-transform: $name !important;
+    }
+}
+
+@mixin text-transform--extend($name) {
+    @extend #{th-text-transform--selector-generator('%', $name)};
+}

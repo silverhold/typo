@@ -105,7 +105,7 @@ There is also a class generated for the `inherit`, `lighter` and `bolder` value 
 If you want to extend a selector to one of the helper class generated you can use the mixin `font-weight--extend($name)`, as shown below.
 ```
 .selector {
-    @include font-weight--extend(monospace);
+    @include font-weight--extend(light);
 }
 ```
 
@@ -133,14 +133,14 @@ There is also a class generated for the `inherit` value of the `font-size` prope
 If you want to extend a selector to one of the helper class generated you can use the mixin `font-size--extend($name)`, as shown below.
 ```
 .selector {
-    @include font-size--extend(monospace);
+    @include font-size--extend(small);
 }
 ```
 
 You can avoid typo-helper to generate any helper font-size helper class by switching to false the `$font-size` variable.
 
 ### text-decoration
-Font style classes are generated with the variable list `$text-decoration__list` that will generate class with all the values possible for the rule `text-decoration` (normal, italic, oblique). You can edit the list to avoid one or several helper class. Default value of the `$text-decoration__list` variable.
+Font style classes are generated with the variable list `$text-decoration__list` that will generate class with all the values possible for the rule `text-decoration` (none, underline, overline, line-through). You can edit the list to avoid one or several helper class. Default value of the `$text-decoration__list` variable.
 ```
 $text-decoration__list: (none, underline, overline, line-through) !default;
 ```
@@ -151,6 +151,22 @@ If you don't want to generate any helper class for text-decoration property you 
 If you want to extend a selector to one of the helper class generated you can use the mixin `text-decoration--extend($name)`, as shown below.
 ```
 .selector {
-    @include text-decoration--extend(italic);
+    @include text-decoration--extend(underline);
+}
+```
+
+### text-transform
+Font style classes are generated with the variable list `$text-transform__list` that will generate class with all the values possible for the rule `text-transform` (capitalize, uppercase, lowercase, none). You can edit the list to avoid one or several helper class. Default value of the `$text-transform__list` variable.
+```
+$text-transform__list: (capitalize, uppercase, lowercase, none) !default;
+```
+
+You can also generate class for the inherit value by setting to `true` the `$text-transform__include--inherit` variable.
+If you don't want to generate any helper class for text-transform property you can set the `$text-transform` variable to `false`.
+
+If you want to extend a selector to one of the helper class generated you can use the mixin `text-transform--extend($name)`, as shown below.
+```
+.selector {
+    @include text-transform--extend(uppercase);
 }
 ```

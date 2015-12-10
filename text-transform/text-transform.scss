@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$text-transform__special-case: (
+    inherit: $text-transform__include--inherit
+);
+
+@if $text-transform {
+    @each $style in $text-transform__list {
+        @include text-transform--statement-generator($style);
+    }
+
+    @each $style, $bool in $text-transform__special-case {
+        @if $bool {
+            @include text-transform--statement-generator($style);
+        }
+    }
+}

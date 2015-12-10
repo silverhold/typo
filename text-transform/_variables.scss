@@ -1,0 +1,6 @@
+$text-transform: true !default;
+
+$text-transform__list: (capitalize, uppercase, lowercase, none) !default;
+
+$text-transform__include--inherit: true !default;
+$text-transform__selector-prefix: 'text-transform--' !default;
