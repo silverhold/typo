@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+$font-variant__special-case: (
+    inherit: $font-variant__include--inherit
+);
+
+@if $font-variant {
+    @each $style in $font-variant__list {
+        @include font-variant--statement-generator($style);
+    }
+
+    @each $style, $bool in $font-variant__special-case {
+        @if $bool {
+            @include font-variant--statement-generator($style);
+        }
+    }
+}

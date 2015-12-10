@@ -66,3 +66,19 @@ If you want to extend a selector to one of the helper class generated you can us
     @include font-style--extend(italic);
 }
 ```
+
+### font-variant
+Font variant classes are generated with the variable list `$font-variant__list` that will generate class with all the values possible for the rule `font-variant` (normal, italic, oblique). You can edit the list to avoid one or several helper class. Default value of the `$font-variant__list` variable.
+```
+$font-variant__list: (normal, italic, oblique) !default;
+```
+
+You can also generate class for the inherit value by setting to `true` the `$font-variant__include--inherit` variable.
+If you don't want to generate any helper class for font-variant property you can set the `$font-variant` variable to `false`.
+
+If you want to extend a selector to one of the helper class generated you can use the mixin `font-variant--extend($name)`, as shown below.
+```
+.selector {
+    @include font-variant--extend(italic);
+}
+```
