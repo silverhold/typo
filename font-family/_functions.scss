@@ -1,0 +1,26 @@
+@function get-font-family($name) {
+    $font-family: map-get($font-family__list, $name);
+    @return #{$font-family};
+}
+
+@function th-font-family--check-special($key) {
+    @each $name, $value in $font-family__special-case {
+        @if $name == $key {
+            @return true;
+        }
+    }
+
+    @return false;
+}
+
+@function th-font-family--value-generator($name) {
+    @if th-font-family--check-special($name) {
+        @return $name;
+    }
+
+    @return get-font-family($name);
+}
+
+@function th-font-family--selector-generator($prefix, $name) {
+    @return #{$prefix}#{$font-family__selector-prefix}#{$name};
+}
