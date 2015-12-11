@@ -1,0 +1,21 @@
+{
+  "name": "typo-helper",
+  "homepage": "https://github.com/LoicGoyet/typo-helper",
+  "authors": [
+    "Loïc Goyet <loic@appventus.com>"
+  ],
+  "description": "Sass helper for managing typography components on projects",
+  "main": "typo-helper.scss",
+  "keywords": [
+    "sass",
+    "typography"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
