@@ -22,7 +22,7 @@
 }
 
 @function th-font-family--selector-line-generator($prefix, $name, $suffix: false) {
-    $selector: #{$prefix}#{$font-family__selector-prefix}#{$name};
+    $selector: #{$prefix}#{$typo-helper__prefix}#{$font-family__selector-prefix}#{$name};
 
     @if $suffix {
         $selector: $selector + $suffix;
