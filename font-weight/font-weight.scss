@@ -9,9 +9,9 @@ $font-weight__special-case: (
 );
 
 $font-weight__pseudo-class: (
-    ('&:hover', $font-weight__pseudo-class--hover, $font-weight__pseudo-class--hover-prefix),
-    ('&:active', $font-weight__pseudo-class--active, $font-weight__pseudo-class--active-prefix),
-    ('&:focus', $font-weight__pseudo-class--focus, $font-weight__pseudo-class--focus-prefix),
+    ('&:hover', $font-weight__pseudo-class--hover, $font-weight__pseudo-class--hover-suffix),
+    ('&:active', $font-weight__pseudo-class--active, $font-weight__pseudo-class--active-suffix),
+    ('&:focus', $font-weight__pseudo-class--focus, $font-weight__pseudo-class--focus-suffix),
 );
 
 

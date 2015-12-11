@@ -7,9 +7,9 @@ $font-style__special-case: (
 );
 
 $font-style__pseudo-class: (
-    ('&:hover', $font-style__pseudo-class--hover, $font-style__pseudo-class--hover-prefix),
-    ('&:active', $font-style__pseudo-class--active, $font-style__pseudo-class--active-prefix),
-    ('&:focus', $font-style__pseudo-class--focus, $font-style__pseudo-class--focus-prefix),
+    ('&:hover', $font-style__pseudo-class--hover, $font-style__pseudo-class--hover-suffix),
+    ('&:active', $font-style__pseudo-class--active, $font-style__pseudo-class--active-suffix),
+    ('&:focus', $font-style__pseudo-class--focus, $font-style__pseudo-class--focus-suffix),
 );
 
 @if $font-style {

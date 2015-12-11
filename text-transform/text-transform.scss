@@ -7,9 +7,9 @@ $text-transform__special-case: (
 );
 
 $text-transform__pseudo-class: (
-    ('&:hover', $text-transform__pseudo-class--hover, $text-transform__pseudo-class--hover-prefix),
-    ('&:active', $text-transform__pseudo-class--active, $text-transform__pseudo-class--active-prefix),
-    ('&:focus', $text-transform__pseudo-class--focus, $text-transform__pseudo-class--focus-prefix),
+    ('&:hover', $text-transform__pseudo-class--hover, $text-transform__pseudo-class--hover-suffix),
+    ('&:active', $text-transform__pseudo-class--active, $text-transform__pseudo-class--active-suffix),
+    ('&:focus', $text-transform__pseudo-class--focus, $text-transform__pseudo-class--focus-suffix),
 );
 
 @if $text-transform {

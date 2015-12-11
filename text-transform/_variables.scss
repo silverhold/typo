@@ -7,8 +7,8 @@ $text-transform__selector-prefix: 'text-transform--' !default;
 
 
 $text-transform__pseudo-class--hover: false !default;
-$text-transform__pseudo-class--hover-prefix: '--hover' !default;
+$text-transform__pseudo-class--hover-suffix: '--hover' !default;
 $text-transform__pseudo-class--active: false !default;
-$text-transform__pseudo-class--active-prefix: '--active' !default;
+$text-transform__pseudo-class--active-suffix: '--active' !default;
 $text-transform__pseudo-class--focus: false !default;
-$text-transform__pseudo-class--focus-prefix: '--focus' !default;
+$text-transform__pseudo-class--focus-suffix: '--focus' !default;
