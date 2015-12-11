@@ -2,7 +2,11 @@
 Sass helper for managing typography components on projects
 
 ## Getting Started
-to be defined
+You can download typo-helper via bower using the following command:
+
+```
+$ bower install typo-helper
+```
 
 ## Usage
 
