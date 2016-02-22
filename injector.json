@@ -1,0 +1,13 @@
+{
+    "stylevendor": [
+        "@bower/typo-helper/typo-helper.scss"
+    ],
+
+    "stylegui": [
+        "@bower/typo-helper/gui.scss"
+    ],
+
+    "gui": [
+        "@bower/typo-helper/gui.html.twig"
+    ]
+}

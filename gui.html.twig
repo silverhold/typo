@@ -1,0 +1,56 @@
+<section>
+    <h2>Typo helper</h2>
+
+    {% set features = [
+        {
+            "name": "font families", "code": "font-family--"
+            "array": fontFamilies|default(["serif", "sans-serif", "cursive", "fantasy", "monospace"]),
+        },
+        {
+            "name": "font size", "code": "font-size--"
+            "array": fontSizes|default(["small", "normal", "large"]),
+        },
+        {
+            "name": "font style", "code": "font-style--",
+            "array": fontStyles|default(["normal", "italic", "oblique"]),
+        },
+        {
+            "name": "font variant", "code": "font-variant--",
+            "array": fontStyles|default(["normal", "small-caps"]),
+        },
+        {
+            "name": "font weight", "code": "font-weight--",
+            "array": fontWeight|default(["light", "normal", "bold"]),
+        },
+        {
+            "name": "text align", "code": "text-align--",
+            "array": fontWeight|default(["left", "right", "center", "justify"]),
+        },
+        {
+            "name": "text decoration", "code": "text-decoration--",
+            "array": textDecoration|default(["none", "underline", "overline", "line-through"]),
+        },
+        {
+            "name": "text transform", "code": "text-transform--",
+            "array": textTransform|default(["capitalize", "uppercase", "lowercase", "none"]),
+        },
+    ] %}
+
+    <p>Here is listed all the typography & variant pre-setted and the helper class to implement it easily</p>
+
+    <div class="typo-gui">
+        {% for feature in features %}
+            <div class="typo-gui__item">
+                <h3>{{ feature.name }}</h3>
+                <ul class="typo-gui__list">
+                    {% for item in feature.array %}
+                        <li class="typo-gui__list-item {{ feature.code }}{{ item }}">
+                            <span>{{ item }}</span>
+                            <code>.{{ feature.code }}{{ item }}</code>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</section>
