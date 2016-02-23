@@ -4,10 +4,10 @@
     ],
 
     "stylegui": [
-        "@bower/typo-helper/gui.scss"
+        "@bower/typo-helper/gui/gui.scss"
     ],
 
     "gui": [
-        "@bower/typo-helper/gui.html.twig"
+        "@bower/typo-helper/gui/gui.html.twig"
     ]
 }
