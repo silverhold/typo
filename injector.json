@@ -1,5 +1,5 @@
 {
-    "stylevendor": [
+    "stylevendors": [
         "@bower/typo-helper/typo-helper.scss"
     ],
 
