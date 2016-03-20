@@ -1,38 +1,64 @@
 <section>
     <h2>Typo helper</h2>
 
+    {% if tphlpr_fontFamilies is not defined %}{% set tphlpr_fontFamilies = ["serif", "sans-serif", "cursive", "fantasy", "monospace"] %}{% endif %}
+    {% if tphlpr_fontSizes is not defined %}{% set tphlpr_fontSizes = ["small", "normal", "large"] %}{% endif %}
+    {% if tphlpr_fontStyles is not defined %}{% set tphlpr_fontStyles = ["normal", "italic", "oblique"] %}{% endif %}
+    {% if tphlpr_fontVariant is not defined %}{% set tphlpr_fontVariant = ["normal", "small-caps"] %}{% endif %}
+    {% if tphlpr_fontWeight is not defined %}{% set tphlpr_fontWeight = ["light", "normal", "bold"] %}{% endif %}
+    {% if tphlpr_textAlign is not defined %}{% set tphlpr_textAlign = ["left", "right", "center", "justify"] %}{% endif %}
+    {% if tphlpr_textDecoration is not defined %}{% set tphlpr_textDecoration = ["none", "underline", "overline", "line-through"] %}{% endif %}
+    {% if tphlpr_textTransform is not defined %}{% set tphlpr_textTransform = ["capitalize", "uppercase", "lowercase", "none"] %}{% endif %}
+
+    {% if tphlpr_enabled_fontFamilies is not defined %}{% set tphlpr_enabled_fontFamilies = true %}{% endif %}
+    {% if tphlpr_enabled_fontSizes is not defined %}{% set tphlpr_enabled_fontSizes = true %}{% endif %}
+    {% if tphlpr_enabled_fontStyles is not defined %}{% set tphlpr_enabled_fontStyles = true %}{% endif %}
+    {% if tphlpr_enabled_fontVariant is not defined %}{% set tphlpr_enabled_fontVariant = true %}{% endif %}
+    {% if tphlpr_enabled_fontWeight is not defined %}{% set tphlpr_enabled_fontWeight = true %}{% endif %}
+    {% if tphlpr_enabled_textAlign is not defined %}{% set tphlpr_enabled_textAlign = true %}{% endif %}
+    {% if tphlpr_enabled_textDecoration is not defined %}{% set tphlpr_enabled_textDecoration = true %}{% endif %}
+    {% if tphlpr_enabled_textTransform is not defined %}{% set tphlpr_enabled_textTransform = true %}{% endif %}
+
     {% set features = [
         {
             "name": "font families", "code": "font-family--",
-            "array": fontFamilies|default(["serif", "sans-serif", "cursive", "fantasy", "monospace"]),
+            "array": fontFamilies,
+            "enabled": tphlpr_enabled_fontFamilies
         },
         {
             "name": "font size", "code": "font-size--",
-            "array": fontSizes|default(["small", "normal", "large"]),
+            "array": fontSizes,
+            "enabled": tphlpr_enabled_fontSizes
         },
         {
             "name": "font style", "code": "font-style--",
-            "array": fontStyles|default(["normal", "italic", "oblique"]),
+            "array": fontStyles,
+            "enabled": tphlpr_enabled_fontStyles
         },
         {
             "name": "font variant", "code": "font-variant--",
-            "array": fontStyles|default(["normal", "small-caps"]),
+            "array": fontVariant,
+            "enabled": tphlpr_enabled_fontVariant
         },
         {
             "name": "font weight", "code": "font-weight--",
-            "array": fontWeight|default(["light", "normal", "bold"]),
+            "array": fontWeight,
+            "enabled": tphlpr_enabled_fontWeight
         },
         {
             "name": "text align", "code": "text-align--",
-            "array": fontWeight|default(["left", "right", "center", "justify"]),
+            "array": textAlign,
+            "enabled": tphlpr_enabled_textAlign
         },
         {
             "name": "text decoration", "code": "text-decoration--",
-            "array": textDecoration|default(["none", "underline", "overline", "line-through"]),
+            "array": textDecoration,
+            "enabled": tphlpr_enabled_textDecoration
         },
         {
             "name": "text transform", "code": "text-transform--",
-            "array": textTransform|default(["capitalize", "uppercase", "lowercase", "none"]),
+            "array": textTransform,
+            "enabled": tphlpr_enabled_textTransform
         },
     ] %}
 
@@ -40,17 +66,20 @@
 
     <div class="typo-gui">
         {% for feature in features %}
-            <div class="typo-gui__item">
-                <h3>{{ feature.name }}</h3>
-                <ul class="typo-gui__list">
-                    {% for item in feature.array %}
-                        <li class="typo-gui__list-item {{ feature.code }}{{ item }}">
-                            <span>{{ item }}</span>
-                            <code>.{{ feature.code }}{{ item }}</code>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% if feature.enabled %}
+                <div class="typo-gui__item">
+                    <h3>{{ feature.name }}</h3>
+
+                    <ul class="typo-gui__list">
+                        {% for item in feature.array %}
+                            <li class="typo-gui__list-item {{ feature.code }}{{ item }}">
+                                <span>{{ item }}</span>
+                                <code>.{{ feature.code }}{{ item }}</code>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 </section>
