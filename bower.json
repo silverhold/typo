@@ -1,10 +1,10 @@
 {
-  "name": "typo-helper",
-  "homepage": "https://github.com/LoicGoyet/typo-helper",
+  "name": "trowel-typo",
+  "homepage": "https://github.com/Trowel/typo",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "Sass helper for managing typography components on projects",
+  "description": "A trowel component to manage typography",
   "main": "typo-helper.scss",
   "keywords": [
     "sass",
