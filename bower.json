@@ -1,10 +1,10 @@
 {
-  "name": "trowel-typo",
-  "homepage": "https://github.com/Trowel/typo",
+  "name": "silverhold-typo",
+  "homepage": "https://github.com/silverhold/typo",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "A trowel component to manage typography",
+  "description": "A silverhold component to manage typography",
   "main": "typo-helper.scss",
   "keywords": [
     "sass",

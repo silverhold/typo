@@ -5,7 +5,7 @@ Sass helper for managing typography components on projects
 You can download typo-helper via bower using the following command:
 
 ```
-$ bower install trowel-typo
+$ bower install silverhold-typo
 ```
 
 ## Usage
